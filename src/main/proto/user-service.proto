@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package my.grpc.service;
+
+// Опционально: можно указать java_package и java_outer_classname
+option java_package = "my.grpc.service";
+option java_outer_classname = "UserServiceProto";
+
+// Сервис для работы с пользователями
+service UserService {
+  // Метод для получения данных пользователя
+  rpc GetUserData (UserRequest) returns (UserResponse);
+}
+
+// Сообщение запроса, соответствующее запросу данных пользователя
+message UserRequest {
+  string mail = 1;
+  string password = 2;
+}
+
+// Сообщение ответа с данными пользователя
+message UserResponse {
+  string user_name = 1;      // Имя пользователя
+  string user_role = 2;      // Роль пользователя
+  string company_id = 3;     // ID компании
+  string user_id = 4;        // ID пользователя
+}

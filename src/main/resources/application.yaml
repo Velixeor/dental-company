@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: dental-company
+  datasource:
+    url: jdbc:postgresql://localhost:5432/project
+    username: postgres
+    password: 135790
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: postgresql
+  liquibase:
+    change-log: db/changelog/master.yaml
+    user: postgres
+    password: 135790
+    liquibase-schema: project_company
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # Подключаем Eureka
+
+server:
+  port: 8083
