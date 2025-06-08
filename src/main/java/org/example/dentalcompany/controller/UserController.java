@@ -26,4 +26,6 @@ public class UserController {
         Long id = userService.createUser(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("id", id));
     }
+
+
 }
